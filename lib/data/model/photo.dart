@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'photo.freezed.dart';
@@ -5,11 +7,12 @@ part 'photo.freezed.dart';
 part 'photo.g.dart';
 
 @freezed
-class photo with _$$photo {
+class photo with _$photo {
   const factory photo({
     required String previewURL,
     required String tags,
   }) = _photo;
 
-  factory photo.fromJson(Map<String, Object?> json) => _$$photoFromJson(json);
-}
+  factory photo.fromJson(Map<String, Object?> json) => _$photoFromJson(json);
+} 
+
