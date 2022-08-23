@@ -4,14 +4,13 @@ import 'package:search_app_freezed/data/model/photo.dart';
 import 'package:http/http.dart' as http;
 
 class PhotoApi {
-  final http.Client _client;
+  final http.Client client;
 
-  PhotoApi({http.Client? client}) : _client = (client ?? http.Client());
-  
-  Future<List<photo>> getImages (String query) async {
+  PhotoApi({http.Client? client}) : client = (client ?? http.Client());
+
+  Future<List<photo>> getImages(String query) async {
     Uri url = Uri.parse(
-      'https://pixabay.com/api/?key=10711147-dc41758b93b263957026bdadb&q=$query&image_type=photo'
-    );
+        'https://pixabay.com/api/?key=10711147-dc41758b93b263957026bdadb&q=$query&image_type=photo');
     http.Response response = await http.get(url);
 
     String jsonString = response.body;
